@@ -1,0 +1,42 @@
+name: CloudGuardian CI
+
+# Run this workflow whenever code is pushed to the main branch
+on:
+  push:
+    branches:
+      - main
+
+
+jobs:
+
+  build-test:
+
+    # Use an Ubuntu virtual machine provided by GitHub
+    runs-on: ubuntu-latest
+
+
+    steps:
+
+      # Step 1: Download your GitHub project code
+      - name: Get Code
+        uses: actions/checkout@v4
+
+
+      # Step 2: Install Python
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.12
+
+
+      # Step 3: Install required Python libraries
+      - name: Install Libraries
+        run: |
+          pip install -r requirements.txt
+
+      #step 4 : Run python test file
+      - name: Test Application
+        run: |
+          docker build -t cloudguardian .
+    
+      
