@@ -42,6 +42,10 @@ jobs:
 
       #step 4 : Run python test file
       - name: Test Application
+        env:
+          EMAIL: ${{secrets.MY_EMAIL}}
+          PASSWORD: ${{secrets.MY_PASSWORD}}
+          ALERT_EMAIL: ${{secrets.ALERT_EMAIL}}
         run: |
           python ./cloudguardian/test.py
         
