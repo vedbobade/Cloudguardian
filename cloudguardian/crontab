@@ -1,0 +1,1 @@
+*/1 * * * * /usr/bin/python3 /home/ec2-user/cloudguardian/monitor.py >> /home/ec2-user/cloudguardian/monitor.log 2>&1

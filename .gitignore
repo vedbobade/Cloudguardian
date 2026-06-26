@@ -1,0 +1,29 @@
+# Environment secrets
+.env
+**/.env
+
+# Python virtual environment
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+**/__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# Editor backup files
+*.save
+*.save.*
+
+# Terraform generated files
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfstate.backup
+
+# OS files
+.DS_Store
+Thumbs.db
