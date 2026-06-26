@@ -31,20 +31,17 @@ jobs:
 
       # Step 3: Install required Python libraries
       - name: Install Libraries
-        working-directory: cloudguardian
         run: |
-          pip install -r cloudguardian/requirements.txt
+          pip install -r requirements.txt
 
       #step 4 : Run python test file
       - name: Test Application
-        working-directory: cloudguardian
         run: |
-          python cloudguardian/test.py
+          python test.py
         
       # Create docker image
       - name: Create Docker Image
-        working-directory: cloudguardian
         run: |
-          docker build -t cloudguardian ./cloudguardian
+          docker build -t cloudguardian .
     
       
