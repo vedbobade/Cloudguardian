@@ -21,6 +21,12 @@ jobs:
       - name: Get Code
         uses: actions/checkout@v4
 
+      - name: Shows Files
+        run: |
+          ls -la
+          ls -la cloudguardian
+          
+
 
       # Step 2: Install Python
       - name: Install Python
@@ -32,16 +38,16 @@ jobs:
       # Step 3: Install required Python libraries
       - name: Install Libraries
         run: |
-          pip install -r requirements.txt
+          pip install -r ./cloudguardian/requirements.txt
 
       #step 4 : Run python test file
       - name: Test Application
         run: |
-          python test.py
+          python ./cloudguardian/test.py
         
       # Create docker image
       - name: Create Docker Image
         run: |
-          docker build -t cloudguardian .
+          docker build -t cloudguardian ./cloudguardian
     
       
